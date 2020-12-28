@@ -1,0 +1,1 @@
+command_line      : /DSymFuzzer/vanilla-afl/x86_64/afl-fuzz -i /DSymFuzzer/seed-dir -o /DSymFuzzer/output-dir/FuzzExplorer -m none -Q -M Master-Fuzz -- /DSymFuzzer/test-suites/test-generation/UAF/demo/uaf01/uaf-01-x86_64 @@

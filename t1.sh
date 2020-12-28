@@ -1,0 +1,1 @@
+./third_party/pin-2.14-71313-gcc.4.4.7-linux/pin -ifeellucky -t ./build/lib.linux-x86_64-2.7/qsym/pintool/obj-ia32/libqsym.so -i /DSymFuzzer/output-dir/FuzzExplorer/Master-Fuzz/queue/id\:000000\,orig\:a0 -o /DSymFuzzer/output-dir/FuzzExplorer/ -s 1 -- /DSymFuzzer/fuzz-qsym/bin-dyn-11 < /DSymFuzzer/output-dir/FuzzExplorer/Master-Fuzz/queue/id\:000000\,orig\:a0
