@@ -1,4 +1,4 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python2.7
 import atexit
 import argparse
 import logging
@@ -24,6 +24,9 @@ def parse_args():
     p.add_argument("-f", dest="filename", default=None)
     p.add_argument("-m", dest="mail", default=None)
     p.add_argument("-b", dest="asan_bin", default=None)
+
+    p.add_argument("-v", dest="aflPath_vagrant", default=None)
+
     p.add_argument("cmd", nargs="+", help="cmdline, use %s to denote a file" % qsym.utils.AT_FILE)
     return p.parse_args()
 
@@ -35,8 +38,13 @@ def main():
     args = parse_args()
     check_args(args)
 
+    print ("aflPath_vagrant = " + args.aflPath_vagrant)
+    e = qsym.afl.AFLExecutor(args.cmd, args.output, args.afl,
+            args.name, args.aflPath_vagrant, args.filename, args.mail, args.asan_bin)
+    '''
     e = qsym.afl.AFLExecutor(args.cmd, args.output, args.afl,
             args.name, args.filename, args.mail, args.asan_bin)
+    '''
     try:
         e.run()
     finally:
